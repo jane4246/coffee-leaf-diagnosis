@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: coffee-leaf-diagnosis
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn predict:app
+    autoDeploy: true
