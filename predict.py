@@ -6,7 +6,7 @@ import os
 
 app = Flask(__name__)
 
-MODEL_PATH = 'model/coffee_disease_model.h5'
+MODEL_PATH = 'coffee_disease_model.h5'
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
