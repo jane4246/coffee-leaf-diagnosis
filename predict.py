@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)  # Enable Cross-Origin Resource Sharing
 
 # Constants
-MODEL_PATH = 'coffee_disease_model.h5'
+MODEL_PATH = 'model/coffee_disease_model.h5'  # ⬅️ Corrected path
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -22,7 +22,7 @@ classes = ['Healthy', 'Rust', 'Leaf Miner', 'Other']
 
 # Helper function to prepare image
 def prepare_image(img_path):
-    img = image.load_img(img_path, target_size=(128, 128))
+    img = image.load_img(img_path, target_size=(128, 128))  # adjust if your model uses a different size
     img_array = image.img_to_array(img)
     img_array = img_array / 255.0
     return np.expand_dims(img_array, axis=0)
